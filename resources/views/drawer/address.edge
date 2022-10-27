@@ -1,0 +1,40 @@
+@layout('layouts/main')
+@set('title', title)
+
+@section('style')
+<style>
+    .addressShelf{
+    }
+    .addressTitle{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .addressText{
+        font-size: 15px;
+        margin-bottom:30px;
+    }
+
+</style>
+@end
+
+@section('body')
+
+    <p>pankuzulist</p>
+
+    <div class="boxShelf" style="border-left: solid 10px #ee836f;">
+        <h5 class="colorSub fontTitle"><i class="bi bi-person-circle" style="color: #ee836f;"></i> {{title}}</h5>
+        <p style="color:#000">--- a drawer of contacts.</p>
+    </div>
+
+    <div class="item">
+        <p class="fontAccent colorMain"> A | B | C | D | E | F | G | H | ...</p>
+        <br>
+    @each(item in data)
+        <div class="addressShelf">
+            <p class="addressTitle colorMain">{{item.title}}</p>
+            <p class="addressText">{{item.text}}</p>
+        </div>
+    @end
+    </div>
+    
+@end

@@ -1,0 +1,39 @@
+@layout('layouts/main')
+@set('title', title)
+
+@section('style')
+<style>
+    .memoShelf{
+        border: solid 1px #303967;
+        padding: 20px;
+    }
+    .memoTitle{
+        font-size: 18px;
+    }
+    .memoText{
+        font-size: 14px;
+    }
+
+</style>
+@end
+
+@section('body')
+
+    <p>pankuzulist</p>
+
+    <div class="boxShelf" style="border-left: solid 10px #e6b422;">
+        <h5 class="colorSub fontTitle"><i class="bi bi-easel-fill" style="color: #e6b422;"></i> {{title}}</h5>
+        <p style="color:#000">--- a drawer of memorys.</p>
+    </div>
+
+    <div class="item">
+    @each(item in data)
+        <div class="memoShelf">
+            <p class="memoTitle">{{item.title}}</p>
+            <p class="memoText">{{item.text}}</p>
+        </div>
+        <p></p>
+    @end
+    </div>
+    
+@end

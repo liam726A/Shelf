@@ -1,0 +1,35 @@
+@layout('layouts/main')
+@set('title', title)
+
+@section('style')
+<style>
+
+</style>
+@end
+
+@section('body')
+
+    <h1 class="appTitle">{{title}}</h1>
+
+    <a href="yourshelf/bookmark" style="text-decoration: none;">
+        <div class="boxShelf" style="border-left: solid 10px #7ebea5;">
+            <h5 class="colorSub fontTitle"><i class="bi bi-house-fill" style="color: #7ebea5;"></i> Bookmarks</h5>
+            <p style="color:#000">--- a drawer of URLs.</p>
+        </div>
+    </a>
+
+    <a href="yourshelf/memo" style="text-decoration: none;">
+        <div class="boxShelf" style="border-left: solid 10px #e6b422;">
+            <h5 class="colorSub fontTitle"><i class="bi bi-easel-fill" style="color: #e6b422;"></i> Memos</h5>
+            <p style="color:#000">--- a drawer of memorys.</p>
+        </div>
+    </a>
+
+    <a href="yourshelf/address" style="text-decoration: none;">
+        <div class="boxShelf" style="border-left: solid 10px #ee836f;">
+            <h5 class="colorSub fontTitle"><i class="bi bi-person-circle" style="color: #ee836f;"></i> Address</h5>
+            <p style="color:#000">--- a drawer of contacts.</p>
+        </div>
+    </a>
+    
+@end

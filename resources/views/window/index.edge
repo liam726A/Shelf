@@ -1,0 +1,31 @@
+@layout('layouts/main')
+@set('title', title)
+
+@section('style')
+<style>
+    .fontURL{
+        font-size: 12px;
+        color: #7ebea5;
+    }
+</style>
+@end
+
+@section('body')
+
+    <h1 class="appTitle">{{title}}</h1>
+
+    @each(item in data)
+        <a href="{{item.url}}" style="text-decoration: none;">
+            <div class="boxShelf" style="border-left: solid 10px #303967;">
+                <h5 class="colorMain">{{item.title}}</h5>
+                <p class="colorMain fontURL">{{item.url}}</p>
+                <p style="color:#000">--- {{item.text}}</p>
+            </div>
+        </a>
+    @end
+
+    <div class="buttonAdmin">
+        <a href="/drawers/add"><i class="bi bi-asterisk"></i></a>
+    </div>
+    
+@end

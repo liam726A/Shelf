@@ -1,0 +1,29 @@
+@layout('layouts/main')
+@set('title', title)
+
+@section('body')
+<p>{{message}}</p>
+<form method="post" action="/drawers/add">
+    <div class="mb-3">
+        <label for="title" class="form-label">title</label>
+        <input type="text" class="form-control" id="title" name="title">
+    </div>
+    <div class="mb-3">
+        <label for="text" class="form-label">explain</label>
+        <input type="text" class="form-control" id="text" name="text">
+    </div>
+    <div class="mb-3">
+        <label for="url" class="form-label">page</label>
+        <input type="text" class="form-control" id="url" name="url">
+    </div>
+    <div class="mb-3">
+        <label for="category" class="form-label">category</label>
+        <select name="category" id="category">
+            <option value="">--Please choose an option--</option>
+            <option value="1">1: Study</option>
+            <option value="2">2: </option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-secondary">送信</button>
+</form>
+@end

@@ -1,0 +1,104 @@
+@layout('layouts/main')
+@set('title', title)
+
+@section('style')
+<!-- pyscript 
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+-->
+<style>
+    .input{
+        padding: 20px 20px 0px;
+    }
+    .input button{
+        margin: 20px;
+    }
+    .output{
+        padding: 20px;
+        margin: 10px 20px 40px;
+        border: solid 1px #303967;
+    }
+    .output code{
+        padding: 10px;
+        color: #303967;
+    }
+</style>
+@end
+
+@section('body')
+
+    <h1 class="appTitle">{{title}}</h1>
+
+    <div class="container mt-3">
+        <p class="fontAccent">1) List up the numbers</p>
+        <div class="input">
+            <form method="post" action="/calc">
+                <div class="form-group mr-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="number1">1: </label>
+                            <input type="text" class="form-control" id="number1" name="number1">
+                        </div>
+                        <div class="col-4">
+                            <label for="number2">2: </label>
+                            <input type="text" class="form-control" id="number2" name="number2">
+                        </div>
+                        <div class="col-4">
+                            <label for="number3">3: </label>
+                            <input type="text" class="form-control" id="number3" name="number3">
+                        </div>
+                        <div class="col-4">
+                            <label for="number4">4: </label>
+                            <input type="text" class="form-control" id="number4" name="number4">
+                        </div>
+                        <div class="col-4">
+                            <label for="number5">5: </label>
+                            <input type="text" class="form-control" id="number5" name="number5">
+                        </div>
+                        <div class="col-4">
+                            <label for="number6">6: </label>
+                            <input type="text" class="form-control" id="number6" name="number6">
+                        </div>
+                        <div class="col-4">
+                            <label for="number7">7: </label>
+                            <input type="text" class="form-control" id="number7" name="number7">
+                        </div>
+                        <div class="col-4">
+                            <label for="number8">8: </label>
+                            <input type="text" class="form-control" id="number8" name="number8">
+                        </div>
+                        <div class="col-4">
+                            <label for="number9">9: </label>
+                            <input type="text" class="form-control" id="number9" name="number9">
+                        </div>
+                        <div class="col-4">
+                            <label for="number10">10: </label>
+                            <input type="text" class="form-control" id="number10" name="number10">
+                        </div>
+                        <div class="col-4">
+                            <label for="number11">11: </label>
+                            <input type="text" class="form-control" id="number11" name="number11">
+                        </div>
+                        <div class="col-4">
+                            <label for="number12">12: </label>
+                            <input type="text" class="form-control" id="number12" name="number12">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">送信</button>
+            </form>
+        </div>
+        <div class = "output">
+            <code>>><br>
+                @each(item in list)
+                {{item}}, 
+                @end
+            </code>
+        </div>
+        <br>
+
+        <p class="fontAccent">2) Choose the spell</p>
+    </div>
+
+    
+@end

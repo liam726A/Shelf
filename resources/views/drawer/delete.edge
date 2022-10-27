@@ -1,0 +1,10 @@
+@layout('layouts/main')
+@set('title', title)
+
+@section('body')
+<p>{{message}}</p>
+<form method="post" action="/yourshelf/del/{{drawer.id}}">
+    <pre>{{JSON.stringify(drawer,null,'  ')}}</pre>
+    <button type="submit" class="btn btn-secondary">送信</button>
+</form>
+@end

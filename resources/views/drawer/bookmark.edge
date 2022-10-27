@@ -1,0 +1,29 @@
+@layout('layouts/main')
+@set('title', title)
+
+@section('style')
+<style>
+
+</style>
+@end
+
+@section('body')
+
+    <p>pankuzulist</p>
+
+    <div class="boxShelf" style="border-left: solid 10px #7ebea5;">
+        <h5 class="colorSub fontTitle"><i class="bi bi-house-fill" style="color: #7ebea5;"></i> {{title}}</h5>
+        <p style="color:#000">--- a drawer of URLs.</p>
+    </div>
+
+    <div class="item">
+    @each(item in data)
+        <a href="{{item.text}}" style="text-decoration: none;">
+            <div class="listShelf" style="border-right: solid 10px #7ebea5;">
+                <p class="colorSub">{{ item.title }}</p>
+            </div>
+        </a>
+    @end
+    </div>
+    
+@end
