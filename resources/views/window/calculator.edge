@@ -2,10 +2,21 @@
 @set('title', title)
 
 @section('style')
-<!-- pyscript 
-<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
--->
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+        $('.answer').hide();
+
+        $('.spellList').on('click', function(){
+            $('.answer').not($('.'+$(this).attr('id'))).hide();
+            $('.'+$(this).attr('id')).show();
+        });
+    });
+</script>
+
+
 <style>
     .input{
         padding: 20px 20px 0px;
@@ -19,6 +30,21 @@
         border: solid 1px #303967;
     }
     .output code{
+        padding: 10px;
+        color: #303967;
+    }
+    .spellSelect{
+        padding: 20px 20px 0px;
+    }
+    .spellSelect button{
+        margin: 3px 0;
+    }
+    .spellAnswer{
+        padding: 20px;
+        margin: 10px 20px 40px;
+        border: solid 1px #303967;
+    }
+    .spellAnswer code{
         padding: 10px;
         color: #303967;
     }
@@ -85,7 +111,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">送信</button>
+                <button type="submit" class="btn btn-primary">OK</button>
             </form>
         </div>
         <div class = "output">
@@ -99,9 +125,28 @@
 
         <p class="fontAccent">2) Choose the spell</p>
         <div class="spellSelect">
-            <button>Sum</button>
+            <button type="button" id="all" class='spellList btn btn-outline-secondary'>ALL in 1</button>
+            <button type="button" id="sum" class='spellList btn btn-outline-secondary'>(Sum) how many is the total?</button>
+            <button type="button" id="ave" class='spellList btn btn-outline-secondary'>(Ave) how about the average?</button>
+            <button type="button" id="max" class='spellList btn btn-outline-secondary'>(Max) the biggest is?</button>
+            <button type="button" id="min" class='spellList btn btn-outline-secondary'>(Min) the smallest?</button>
+            <button type="button" id="viz" class='spellList btn btn-outline-secondary'>(Viz) show me the chart?</button>
+        </div>
+        <br>
+        <div class="spellAnswer">
+        <code>>><br>need: research - how to calculate / js
+            <div class="sum answer">
+                    @each(item in list)
+                        ans = 0
+                        ans = ans + item
+                    @end
+                    {{ans}}
+            </div>
+            <div class="ave answer">
+                <p>Average: 5</p>
+            </div>
+        </code>
         </div>
     </div>
-
     
 @end
