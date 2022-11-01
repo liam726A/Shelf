@@ -48,7 +48,7 @@ Route.post('/yourshelf/del/:id', 'DrawersController.delete_posted')
 
 Route.get('/drawers', 'WindowsController.window')
 Route.get('/drawers/add', 'WindowsController.add')
-Route.post('/drawers/add', 'WindowsController.edit_posted')
+Route.post('/drawers/add', 'WindowsController.add_posted')
 Route.get('/drawers/:id', 'WindowsController.edit')
 Route.post('/drawers/:id', 'WindowsController.edit_posted')
 
