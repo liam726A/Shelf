@@ -1,3 +1,3 @@
 # Shelf
 
-an open-soarce Shelf for you.
+an open-sorce Shelf for you.
